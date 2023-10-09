@@ -1,0 +1,47 @@
+import java.util.*;
+
+class Numbergame
+{
+    public static void main(String args[])
+    {
+
+
+
+        int number = 1 + (int) ( 100 * Math.random());
+        int i, guess;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of trials:  ");
+        int trials = sc.nextInt();
+        System.out.println("A number is guessed between 1 to 100 ");
+        System.out.println("guess the number in " +trials+ " trials.");
+
+         
+        for(i=0; i<trials; i++)
+        {
+            System.out.println(" guess the number");
+            guess = sc.nextInt();
+            if(guess==number)
+            {
+                System.out.println("you have guess the correct number:");
+                break;
+            }
+            else if(guess<number)
+            {
+                System.out.println(" the number is too high than "+guess);
+            }
+            else if(guess>number)
+            {
+                System.out.println(" the number is too Low than "+guess);
+            }
+        }
+
+
+        if (i==trials)
+        {
+            System.out.println("you have exhausted all your " +trials+ "trials");
+            System.out.println( "you loss the game "+number);
+        }
+
+        
+    }
+}
